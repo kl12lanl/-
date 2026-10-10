@@ -1,0 +1,18 @@
+from translate import Translator
+
+
+def translate_text(text, from_lang='en', to_lang='ru'):
+  try:
+    translator = Translator(from_lang=from_lang, to_lang=to_lang)
+    result = translator.translate(text)
+    return result
+  except Exception as e:
+    return f'Ошибка перевода: {e}'
+
+
+# Пример использования
+english_text = 'Hello, how are you?'
+translated = translate_text(english_text)
+
+print(f'Оригинал: {english_text}')
+print(f'Перевод: {translated}')
